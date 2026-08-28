@@ -65,7 +65,7 @@ def parse_table(table):
 # Validation of the parsed criteria: Tasks, task items, tables items
 def validate_criteria(criteria):
     task = [
-        "Presentations",
+        "Project",
         "Scientific Papers",
         "Demos",
         "Open-source contributions",
