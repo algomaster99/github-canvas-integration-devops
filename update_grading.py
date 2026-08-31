@@ -31,12 +31,6 @@ def parse_criteria():
     for section in sections[1:]:
         items = section.split("\n\n\n")
         name = items[0].strip()
-        if len(items) < 4:
-            # Task has no fixed criteria (title/description/table/grading) yet,
-            # e.g. a newly introduced task category -- skip syncing it rather
-            # than crash, until it's written up with the full structure.
-            print("Skipping '" + name + "': no criteria table yet")
-            continue
         result[name] = {}
         result[name]['description'] = items[1]
         result[name]['table'] = parse_table(items[2])
@@ -68,9 +62,8 @@ def parse_table(table):
 
 # Validation of the parsed criteria: Tasks, task items, tables items
 def validate_criteria(criteria):
-    # "Project" is intentionally excluded: it has no fixed criteria table
-    # yet, so parse_criteria() skips it rather than including it here.
     task = [
+        "Project",
         "Demos",
         "Scientific Papers",
         "Executable Tutorial",
