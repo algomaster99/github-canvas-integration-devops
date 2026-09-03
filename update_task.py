@@ -120,8 +120,8 @@ def task_to_group_category_id(task_name, canvas_groups_set):
         "project": "Project",
         "scientific-paper": "Scientific Papers",
         "demo": "Demos",
-        "open-source": "Open-source contributions",
-        "executable-tutorial": "Executable Tutorials",
+        "open-source": "Open-Source Contribution",
+        "executable-tutorial": "Executable Tutorial",
         "feedback": "Feedback"
     }.get(task_name)
     if canvas_group_name is None:
